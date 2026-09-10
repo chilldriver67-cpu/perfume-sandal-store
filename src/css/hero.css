@@ -1,0 +1,69 @@
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-color: var(--color-bg-soft);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url("/src/assets/images/hero-banner.svg");
+  background-size: cover;
+  background-position: center;
+
+  padding: 2rem;
+}
+
+[data-theme="dark"] .hero {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("/src/assets/images/hero-banner.svg");
+}
+
+/* ==========================
+   HERO CONTENT
+========================== */
+
+.hero__content {
+  max-width: 600px;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+/* ==========================
+   CALL TO ACTION BUTTON
+========================== */
+
+.hero__cta {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero__cta:hover,
+.hero__cta:focus-visible {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+}

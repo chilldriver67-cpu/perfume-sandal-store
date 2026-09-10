@@ -1,0 +1,90 @@
+/* ==========================
+   COMPONENT STYLESHEETS
+   @import MUST stay first in this file — nothing else may precede it.
+========================== */
+@import "./navbar.css";
+@import "./hero.css";
+@import "./products.css";
+@import "./footer.css";
+@import "./responsive.css";
+
+/* ==========================
+   THEME VARIABLES (Light + Dark)
+   Toggled via a data-theme="dark" attribute on <html>, set by theme.js.
+========================== */
+
+:root {
+  --color-bg: #FFFFFF;
+  --color-bg-soft: #FBF6EF;
+  --color-text: #2B2B2B;
+  --color-text-muted: #6B6B6B;
+  --color-accent: #C9A66B;
+  --color-accent-hover: #B8935A;
+  --color-border: #E5DDD0;
+  --color-card-bg: #FFFFFF;
+  --color-overlay: rgba(0, 0, 0, 0.4);
+  --color-shadow: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  --color-bg: #1B1B1B;
+  --color-bg-soft: #242220;
+  --color-text: #F5F0E8;
+  --color-text-muted: #B8B0A2;
+  --color-accent: #D9BA82;
+  --color-accent-hover: #E8CB99;
+  --color-border: #3A3733;
+  --color-card-bg: #242220;
+  --color-overlay: rgba(0, 0, 0, 0.65);
+  --color-shadow: rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================
+   GLOBAL RESET & BASE STYLES
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden; /* safety net: never allow accidental horizontal scroll */
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ==========================
+   SHARED CONTAINER
+   Centers content with consistent max-width and side padding.
+========================== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* ==========================
+   SHARED SECTION TITLE
+========================== */
+
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+}
+
+.section-title--left {
+  text-align: left;
+}

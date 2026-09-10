@@ -1,0 +1,152 @@
+/* ==========================
+   TABLET BREAKPOINT (≤ 768px)
+========================== */
+
+@media (max-width: 768px) {
+
+  /* --- Navbar: switch to mobile menu --- */
+  .navbar__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg);
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    gap: 1.2rem;
+    box-shadow: 0 4px 12px var(--color-shadow);
+  }
+
+  .navbar__links--open {
+    display: flex;
+  }
+
+  .navbar__menu-toggle {
+    display: block;
+  }
+
+  /* --- Product grids: 4 columns → 2 columns --- */
+  .product-grid,
+  .categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- About section: 2 columns → stacked --- */
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about__content {
+    max-width: 100%;
+  }
+
+  /* --- Footer: 4 columns → 2 columns --- */
+  .site-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Product details modal: side-by-side → stacked --- */
+  .product-modal__content {
+    grid-template-columns: 1fr;
+  }
+
+  .product-modal__image {
+    min-height: 220px;
+  }
+
+}
+
+/* ==========================
+   MOBILE BREAKPOINT (≤ 480px)
+========================== */
+
+@media (max-width: 480px) {
+
+  /* --- Navbar: prevent overflow at very narrow widths.
+       The logo text + icon row does not fit at this size by default
+       (flex items don't shrink below their content size), which was
+       the real root cause of a whole-page horizontal-overflow bug. --- */
+  .navbar {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .navbar__logo a {
+    font-size: 1rem;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+  }
+
+  .navbar__actions {
+    gap: 0.3rem;
+  }
+
+  .navbar__icon-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+
+  /* --- Product grids: 2 columns → 1 column --- */
+  .product-grid,
+  .categories__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Container: tighter side padding on small phones --- */
+  .container,
+  .categories,
+  .about,
+  .testimonials {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* --- Footer: 2 columns → 1 column, centered --- */
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .site-footer__tagline {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* --- Newsletter form: side-by-side → stacked --- */
+  .newsletter__form {
+    flex-direction: column;
+  }
+
+  .newsletter__btn {
+    width: 100%;
+  }
+
+  /* --- Cart drawer: full width on tiny screens --- */
+  .cart-drawer {
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  /* --- Account dropdown: don't overflow off the right edge --- */
+  .account-dropdown {
+    right: 1rem;
+    left: 1rem;
+    min-width: unset;
+  }
+
+  /* --- Hero: tighten padding, shrink min-height slightly --- */
+  .hero {
+    min-height: 70vh;
+    padding: 1.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+}

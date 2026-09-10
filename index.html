@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfume & Sandal Store | Luxury Scents & Footwear</title>
+</head>
+
+<body>
+
+  <!-- ==========================
+       ANNOUNCEMENT BAR
+  ========================== -->
+  <div class="announcement-bar">
+    <p>Free shipping on all orders over $150 ✦ Complimentary gift wrapping</p>
+  </div>
+
+  <!-- ==========================
+       MAIN NAVIGATION
+  ========================== -->
+  <header class="navbar">
+    <div class="navbar__logo">
+      <a href="/">Maison&nbsp;Éclat</a>
+    </div>
+
+    <nav class="navbar__links" aria-label="Main navigation">
+      <a href="#perfumes">Perfumes</a>
+      <a href="#sandals">Sandals</a>
+      <a href="#new-arrivals">New Arrivals</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="navbar__actions">
+      <button class="navbar__icon-btn" aria-label="Toggle dark mode" id="theme-toggle-btn">🌙</button>
+      <button class="navbar__icon-btn" aria-label="Search">🔍</button>
+      <button class="navbar__icon-btn" aria-label="Account" id="account-toggle-btn">👤</button>
+      <button class="navbar__icon-btn" aria-label="Cart" id="cart-toggle-btn">
+        🛍️<span class="cart-badge" id="cart-badge" hidden>0</span>
+      </button>
+      <button class="navbar__menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- ==========================
+       HERO SECTION
+  ========================== -->
+  <section class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title">Scents &amp; Steps, Refined</h1>
+      <p class="hero__subtitle">
+        Discover our curated collection of luxury perfumes and handcrafted sandals.
+      </p>
+      <a href="#featured" class="hero__cta">Shop the Collection</a>
+    </div>
+  </section>
+
+  <!-- ==========================
+       APP ROOT
+  ========================== -->
+  <main id="app">
+
+    <!-- ==========================
+         CATEGORIES
+    ========================== -->
+    <section class="categories" id="categories">
+      <h2 class="section-title">Shop by Category</h2>
+
+      <div class="categories__grid">
+        <a href="#perfumes" class="category-card">
+          <img src="/src/assets/images/category-perfumes.svg" alt="Perfumes category" />
+          <span class="category-card__label">Perfumes</span>
+        </a>
+
+        <a href="#sandals" class="category-card">
+          <img src="/src/assets/images/category-sandals.svg" alt="Sandals category" />
+          <span class="category-card__label">Sandals</span>
+        </a>
+
+        <a href="#new-arrivals" class="category-card">
+          <img src="/src/assets/images/category-new-arrivals.svg" alt="New arrivals category" />
+          <span class="category-card__label">New Arrivals</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==========================
+         FEATURED PRODUCTS
+    ========================== -->
+    <section class="featured container" id="featured">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <!-- ==========================
+         NEW ARRIVALS
+    ========================== -->
+    <section class="new-arrivals container" id="new-arrivals">
+      <h2 class="section-title">New Arrivals</h2>
+      <div class="product-grid" id="new-arrivals-grid"></div>
+    </section>
+
+    <!-- ==========================
+         BEST SELLERS
+    ========================== -->
+    <section class="best-sellers container" id="best-sellers">
+      <h2 class="section-title">Best Sellers</h2>
+      <div class="product-grid" id="best-sellers-grid"></div>
+    </section>
+
+    <!-- ==========================
+         ABOUT
+    ========================== -->
+    <section class="about" id="about">
+      <div class="about__image">
+        <img src="/src/assets/images/about-story.svg" alt="Perfume bottles arranged on a marble vanity" />
+      </div>
+
+      <div class="about__content">
+        <h2 class="section-title section-title--left">Our Story</h2>
+        <p>
+          Maison Éclat was founded on a simple belief: that everyday luxury
+          should feel personal, not performative. Each fragrance is composed
+          in small batches, and every pair of sandals is finished by hand —
+          because craftsmanship, not volume, is what makes something worth
+          keeping.
+        </p>
+        <p>
+          From our atelier to your doorstep, every detail is considered:
+          the weight of the glass, the stitch of the leather, the moment
+          you first catch the scent in the air.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================
+         TESTIMONIALS
+    ========================== -->
+    <section class="testimonials container" id="testimonials">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="testimonials__grid" id="testimonials-grid"></div>
+    </section>
+
+    <!-- ==========================
+         NEWSLETTER
+    ========================== -->
+    <section class="newsletter" id="newsletter">
+      <h2 class="section-title newsletter__title">Stay in the Know</h2>
+      <p class="newsletter__subtitle">
+        Be the first to hear about new arrivals and exclusive offers.
+      </p>
+
+      <form class="newsletter__form" id="newsletter-form">
+        <input
+          type="email"
+          class="newsletter__input"
+          id="newsletter-email"
+          placeholder="Enter your email"
+          required
+        />
+        <button type="submit" class="newsletter__btn">Subscribe</button>
+      </form>
+
+      <p class="newsletter__message" id="newsletter-message" hidden></p>
+    </section>
+
+  </main>
+
+  <!-- ==========================
+       FOOTER
+  ========================== -->
+  <footer class="site-footer">
+    <div class="site-footer__grid">
+
+      <div class="site-footer__brand">
+        <p class="site-footer__logo">Maison&nbsp;Éclat</p>
+        <p class="site-footer__tagline">Everyday luxury, thoughtfully made.</p>
+      </div>
+
+      <div class="site-footer__column">
+        <h3 class="site-footer__heading">Shop</h3>
+        <ul class="site-footer__list">
+          <li><a href="#perfumes">Perfumes</a></li>
+          <li><a href="#sandals">Sandals</a></li>
+          <li><a href="#new-arrivals">New Arrivals</a></li>
+          <li><a href="#best-sellers">Best Sellers</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__column">
+        <h3 class="site-footer__heading">Company</h3>
+        <ul class="site-footer__list">
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__column">
+        <h3 class="site-footer__heading">Follow Us</h3>
+        <ul class="site-footer__list site-footer__list--social">
+          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      <p id="footer-year">© Maison Éclat. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ==========================
+       PRODUCT DETAILS MODAL
+  ========================== -->
+  <dialog class="product-modal" id="product-modal">
+    <button class="product-modal__close" id="product-modal-close" aria-label="Close">✕</button>
+    <div class="product-modal__content" id="product-modal-content"></div>
+  </dialog>
+
+  <!-- ==========================
+       AUTH MODAL (Login / Sign Up)
+  ========================== -->
+  <dialog class="auth-modal" id="auth-modal">
+    <button class="product-modal__close" id="auth-modal-close" aria-label="Close">✕</button>
+
+    <div class="auth-modal__content">
+      <h2 class="auth-modal__title" id="auth-modal-title">Log In</h2>
+
+      <form id="auth-form">
+        <label class="auth-modal__label" for="auth-email">Email</label>
+        <input type="email" id="auth-email" class="auth-modal__input" required />
+
+        <label class="auth-modal__label" for="auth-password">Password</label>
+        <input type="password" id="auth-password" class="auth-modal__input" required minlength="6" />
+
+        <button type="submit" class="product-modal__add-btn" id="auth-submit-btn">Log In</button>
+      </form>
+
+      <p class="auth-modal__message" id="auth-message" hidden></p>
+
+      <p class="auth-modal__switch">
+        <span id="auth-switch-text">Don't have an account?</span>
+        <button type="button" id="auth-switch-btn">Sign Up</button>
+      </p>
+    </div>
+  </dialog>
+
+  <!-- ==========================
+       ACCOUNT DROPDOWN
+  ========================== -->
+  <div class="account-dropdown" id="account-dropdown" hidden>
+    <p class="account-dropdown__email" id="account-dropdown-email"></p>
+    <button class="account-dropdown__logout" id="logout-btn">Log Out</button>
+  </div>
+
+  <!-- ==========================
+       CART DRAWER
+  ========================== -->
+  <div class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer__header">
+      <h2>Your Cart</h2>
+      <button class="cart-drawer__close" id="cart-close-btn" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-drawer__items" id="cart-items"></div>
+
+    <div class="cart-drawer__footer">
+      <p class="cart-drawer__total">
+        Total: <span id="cart-total">$0.00</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="cart-overlay" id="cart-overlay" hidden></div>
+
+  <!-- ==========================
+       MAIN SCRIPT ENTRY
+  ========================== -->
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
