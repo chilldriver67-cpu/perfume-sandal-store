@@ -32,7 +32,7 @@
 
     <div class="navbar__actions">
       <button class="navbar__icon-btn" aria-label="Toggle dark mode" id="theme-toggle-btn">🌙</button>
-      <button class="navbar__icon-btn" aria-label="Search">🔍</button>
+      <button class="navbar__icon-btn" aria-label="Search" id="search-toggle-btn">🔍</button>
       <button class="navbar__icon-btn" aria-label="Account" id="account-toggle-btn">👤</button>
       <button class="navbar__icon-btn" aria-label="Cart" id="cart-toggle-btn">
         🛍️<span class="cart-badge" id="cart-badge" hidden>0</span>
@@ -67,17 +67,17 @@
 
       <div class="categories__grid">
         <a href="#perfumes" class="category-card">
-          <img src="/src/assets/images/category-perfumes.svg" alt="Perfumes category" />
+          <img src="/src/assets/images/category-perfumes.jpg" alt="Perfumes category" />
           <span class="category-card__label">Perfumes</span>
         </a>
 
         <a href="#sandals" class="category-card">
-          <img src="/src/assets/images/category-sandals.svg" alt="Sandals category" />
+          <img src="/src/assets/images/category-sandals.jpg" alt="Sandals category" />
           <span class="category-card__label">Sandals</span>
         </a>
 
         <a href="#new-arrivals" class="category-card">
-          <img src="/src/assets/images/category-new-arrivals.svg" alt="New arrivals category" />
+          <img src="/src/assets/images/category-new-arrivals.jpg" alt="New arrivals category" />
           <span class="category-card__label">New Arrivals</span>
         </a>
       </div>
@@ -112,7 +112,7 @@
     ========================== -->
     <section class="about" id="about">
       <div class="about__image">
-        <img src="/src/assets/images/about-story.svg" alt="Perfume bottles arranged on a marble vanity" />
+        <img src="/src/assets/images/biography-image.jpg" alt="Perfume bottles arranged on a marble vanity" />
       </div>
 
       <div class="about__content">
@@ -278,5 +278,25 @@
        MAIN SCRIPT ENTRY
   ========================== -->
   <script type="module" src="/src/js/main.js"></script>
+
+  <!-- ==========================
+       SEARCH DIALOG
+  ========================== -->
+  <dialog class="search-modal" id="search-modal">
+    <button class="product-modal__close" id="search-modal-close" aria-label="Close search">✕</button>
+
+    <div class="search-modal__content">
+      <input
+        type="text"
+        id="search-input"
+        class="search-modal__input"
+        placeholder="Search perfumes, sandals..."
+        autocomplete="off"
+      />
+
+      <div class="search-modal__results" id="search-results"></div>
+    </div>
+  </dialog>
+
 </body>
 </html>

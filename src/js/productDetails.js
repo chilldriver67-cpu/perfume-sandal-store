@@ -31,7 +31,7 @@ function renderModalContent(product) {
   `;
 }
 
-function openProductModal(productId) {
+  export function openProductModal(productId) {
   const product = products.find((p) => p.id === productId);
   if (!product) return;
 
