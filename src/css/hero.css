@@ -12,7 +12,7 @@
   background-color: var(--color-bg-soft);
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-    url("/src/assets/images/hero-banner.jpg");
+    url("https://opgjlvwssvjbohwjsusq.supabase.co/storage/v1/object/public/product-images/biography-image.jpg");
   background-size: cover;
   background-position: center;
 
@@ -22,7 +22,7 @@
 [data-theme="dark"] .hero {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("/src/assets/images/hero-banner.jpg");
+    url("https://opgjlvwssvjbohwjsusq.supabase.co/storage/v1/object/public/product-images/biography-image.jpg");
 }
 
 /* ==========================
