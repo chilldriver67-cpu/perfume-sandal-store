@@ -5,6 +5,7 @@
 
 import { products } from "../data/products.js";
 import { addToCart } from "./cart.js";
+import { formatCurrency } from "./currency.js";
 
 let selectedQuantity = 1;
 
@@ -15,9 +16,8 @@ function renderModalContent(product) {
     <div class="product-modal__info">
       <span class="product-card__category">${product.category}</span>
       <h2 class="product-modal__name">${product.name}</h2>
-      <p class="product-modal__price">$${product.price.toFixed(2)}</p>
+      <p class="product-modal__price">${formatCurrency(product.price)}</p>
       <p class="product-modal__description">${product.description}</p>
-
       <div class="quantity-stepper">
         <button class="quantity-stepper__btn" id="modal-qty-decrease">−</button>
         <span id="modal-qty-value">1</span>

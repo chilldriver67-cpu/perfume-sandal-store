@@ -136,7 +136,7 @@ function renderCartItem(item) {
       <img src="${product.image}" alt="${product.name}" class="cart-item__image" />
       <div class="cart-item__info">
         <p class="cart-item__name">${product.name}</p>
-        <p class="cart-item__price">$${product.price.toFixed(2)}</p>
+        <p class="cart-item__price">${formatCurrency(product.price)}</p>
         <div class="cart-item__quantity">
           <button class="cart-item__qty-btn" data-action="decrease" data-id="${product.id}">−</button>
           <span>${item.quantity}</span>
@@ -159,8 +159,7 @@ function renderCart() {
     cartItems.length > 0
       ? cartItems.map(renderCartItem).join("")
       : `<p class="cart-drawer__empty">Your cart is empty.</p>`;
-
-  totalEl.textContent = `$${getCartTotal().toFixed(2)}`;
+  totalEl.textContent = formatCurrency(getCartTotal());
 
   const count = getCartCount();
   badge.textContent = count;

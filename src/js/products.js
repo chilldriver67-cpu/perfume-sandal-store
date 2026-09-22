@@ -4,6 +4,7 @@
 // ==========================
 
 import { products } from "../data/products.js";
+import { formatCurrency } from "./currency.js";
 
 // Build the HTML string for a single product card
 function renderProductCard(product) {
@@ -13,7 +14,7 @@ function renderProductCard(product) {
       <div class="product-card__info">
         <span class="product-card__category">${product.category}</span>
         <h3 class="product-card__name">${product.name}</h3>
-        <p class="product-card__price">$${product.price.toFixed(2)}</p>
+        <p class="product-card__price">${formatCurrency(product.price)}</p>
         <button class="product-card__btn" data-id="${product.id}">
           Add to Cart
         </button>
