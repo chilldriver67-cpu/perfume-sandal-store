@@ -7,6 +7,7 @@
 
 import { products } from "../data/products.js";
 import { supabase } from "./supabaseClient.js";
+import { formatCurrency } from "./currency.js";
 
 const STORAGE_KEY = "perfume-sandal-cart";
 
