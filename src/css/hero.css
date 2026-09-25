@@ -10,20 +10,15 @@
   text-align: center;
 
   background-color: var(--color-bg-soft);
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-    url("https://opgjlvwssvjbohwjsusq.supabase.co/storage/v1/object/public/product-images/hero-banner.jpg");
+  background-image:url("https://opgjlvwssvjbohwjsusq.supabase.co/storage/v1/object/public/product-images/hero-banner.jpg");
   background-size: cover;
   background-position: center;
 
   padding: 2rem;
 }
 
-[data-theme="dark"] .hero {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("https://opgjlvwssvjbohwjsusq.supabase.co/storage/v1/object/public/product-images/hero-banner.jpg");
-}
+
+
 
 /* ==========================
    HERO CONTENT
@@ -31,6 +26,15 @@
 
 .hero__content {
   max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+}
+
+[data-theme="dark"] .hero__content {
+  background-color: rgba(20, 18, 16, 0.6);
 }
 
 .hero__title {
@@ -38,7 +42,7 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--color-text);
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; 
 }
 
 .hero__subtitle {
