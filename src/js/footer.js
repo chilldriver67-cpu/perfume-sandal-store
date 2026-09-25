@@ -8,5 +8,5 @@ export function initFooter() {
   if (!yearEl) return;
 
   const currentYear = new Date().getFullYear();
-  yearEl.textContent = `© ${currentYear} Maison Éclat. All rights reserved.`;
+  yearEl.textContent = `© ${currentYear} Precious Collections. All rights reserved.`;
 }
