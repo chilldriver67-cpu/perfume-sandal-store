@@ -41,6 +41,20 @@
     max-width: 100%;
   }
 
+  /* --- Newsletter: two-column → stacked --- */
+  .newsletter {
+    grid-template-columns: 1fr;
+    margin: 2rem 1rem;
+  }
+
+  .newsletter__image img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .newsletter__content {
+    padding: 2rem;
+  }
+
   /* --- Footer: 4 columns → 2 columns --- */
   .site-footer__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -125,6 +139,8 @@
   .newsletter__btn {
     width: 100%;
   }
+
+    
 
   /* --- Cart drawer: full width on tiny screens --- */
   .cart-drawer {
