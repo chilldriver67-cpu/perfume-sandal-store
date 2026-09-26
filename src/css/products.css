@@ -1,4 +1,20 @@
 /* ==========================
+   SQUIRCLE CORNERS
+   True G2-continuous corners (iOS/Figma-style), via the clip-path
+   defined once in index.html. Keeping border-radius alongside it means
+   box-shadow (which follows border-radius, not clip-path) still roughly
+   matches the visible clipped shape.
+   Best suited to elements with a roughly square/consistent aspect ratio —
+   very wide or thin elements will show slight corner stretching, since
+   the same clip shape is being stretched to fit the element's box.
+========================== */
+
+.squircle {
+  clip-path: url(#squircle);
+  border-radius: 24px; /* fallback + keeps box-shadow roughly matching */
+}
+
+/* ==========================
    CATEGORIES
 ========================== */
 

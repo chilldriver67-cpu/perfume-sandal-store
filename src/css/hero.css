@@ -63,7 +63,7 @@
   font-size: 1rem;
   padding: 0.9rem 2.2rem;
   border-radius: 999px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero__cta:hover,

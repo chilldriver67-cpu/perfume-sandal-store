@@ -9,6 +9,20 @@
 <body>
 
   <!-- ==========================
+     SQUIRCLE CLIP-PATH DEFINITION
+     Defines a G2-continuous "squircle" corner shape (iOS/Figma-style),
+     reused across cards, images, and modals via CSS clip-path.
+     Hidden — this element has no visual presence of its own.
+========================== -->
+<svg width="0" height="0" style="position: absolute;" aria-hidden="true">
+  <defs>
+    <clipPath id="squircle" clipPathUnits="objectBoundingBox">
+      <path d="M 0.6760 0 c 0.1350 0 0.2025 0 0.2498 0.0344 a 0.1800 0.1800 0 0 1 0.0398 0.0398 c 0.0344 0.0473 0.0344 0.1148 0.0344 0.2498 L 1 0.6760 c 0 0.1350 0 0.2025 -0.0344 0.2498 a 0.1800 0.1800 0 0 1 -0.0398 0.0398 c -0.0473 0.0344 -0.1148 0.0344 -0.2498 0.0344 L 0.3240 1 c -0.1350 0 -0.2025 0 -0.2498 -0.0344 a 0.1800 0.1800 0 0 1 -0.0398 -0.0398 c -0.0344 -0.0473 -0.0344 -0.1148 -0.0344 -0.2498 L 0 0.3240 c 0 -0.1350 0 -0.2025 0.0344 -0.2498 a 0.1800 0.1800 0 0 1 0.0398 -0.0398 c 0.0473 -0.0344 0.1148 -0.0344 0.2498 -0.0344 Z" />
+    </clipPath>
+  </defs>
+</svg>
+
+  <!-- ==========================
        ANNOUNCEMENT BAR
   ========================== -->
   <div class="announcement-bar">
@@ -45,7 +59,7 @@
        HERO SECTION
   ========================== -->
   <section class="hero">
-    <div class="hero__content">
+    <div class="hero__content squircle">
       <h1 class="hero__title">Scents &amp; Steps, Refined</h1>
       <p class="hero__subtitle">
         Discover our curated collection of luxury perfumes and handcrafted sandals.
@@ -66,17 +80,17 @@
       <h2 class="section-title">Shop by Category</h2>
 
       <div class="categories__grid">
-        <a href="#perfumes" class="category-card">
+        <a href="#perfumes" class="category-card squircle">
           <img src="https://opgjlvwssvjbohwjsusq.supabase.co/storage/v1/object/public/product-images/category-perfumes.jpg" alt="Perfumes category" />
           <span class="category-card__label">Perfumes</span>
         </a>
 
-        <a href="#sandals" class="category-card">
+        <a href="#sandals" class="category-card squircle">
           <img src="https://opgjlvwssvjbohwjsusq.supabase.co/storage/v1/object/public/product-images/category-sandals.jpg" alt="Sandals category" />
           <span class="category-card__label">Sandals</span>
         </a>
 
-        <a href="#new-arrivals" class="category-card">
+        <a href="#new-arrivals" class="category-card squircle">
           <img src="https://opgjlvwssvjbohwjsusq.supabase.co/storage/v1/object/public/product-images/category-new-arrivals.jpg" alt="New arrivals category" />
           <span class="category-card__label">New Arrivals</span>
         </a>
@@ -111,7 +125,7 @@
          ABOUT
     ========================== -->
     <section class="about" id="about">
-      <div class="about__image">
+      <div class="about__image squircle">
         <img src="https://opgjlvwssvjbohwjsusq.supabase.co/storage/v1/object/public/product-images/biography-image.jpg" alt="Perfume bottles arranged on a marble vanity" />
       </div>
 

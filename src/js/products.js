@@ -9,7 +9,7 @@ import { formatCurrency } from "./currency.js";
 // Build the HTML string for a single product card
 function renderProductCard(product) {
   return `
-    <article class="product-card">
+    <article class="product-card squircle">
       <img src="${product.image}" alt="${product.name}" class="product-card__image" />
       <div class="product-card__info">
         <span class="product-card__category">${product.category}</span>
