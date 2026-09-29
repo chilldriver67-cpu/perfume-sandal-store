@@ -318,4 +318,20 @@ button,
     transition-delay: 0s !important;
     animation-duration: 0.01ms !important;
   }
+    html {
+    scroll-behavior: auto;
+  }
+    .product-card__image {
+    transition: opacity 0.01ms !important;
+    transform: none;
+  }
+}
+
+
+/* ==========================
+   SMOOTH ANCHOR SCROLLING
+========================== */
+
+html {
+  scroll-behavior: smooth;
 }

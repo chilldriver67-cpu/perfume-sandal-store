@@ -5,12 +5,22 @@
 
 import { products } from "../data/products.js";
 import { formatCurrency } from "./currency.js";
+import { revealImagesOnLoad } from "./imageReveal.js";
 
 // Build the HTML string for a single product card
 function renderProductCard(product) {
   return `
-    <article class="product-card squircle">
-      <img src="${product.image}" alt="${product.name}" class="product-card__image" />
+    <article class="product-card">
+      <div class="product-card__image-wrap">
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+          class="product-card__image"
+          data-reveal
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
       <div class="product-card__info">
         <span class="product-card__category">${product.category}</span>
         <h3 class="product-card__name">${product.name}</h3>
@@ -29,6 +39,7 @@ function renderProducts(containerId, productList) {
   if (!grid) return;
 
   grid.innerHTML = productList.map(renderProductCard).join("");
+  revealImagesOnLoad(grid);
 }
 
 // ==========================
