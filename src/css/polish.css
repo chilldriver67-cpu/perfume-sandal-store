@@ -248,13 +248,11 @@ button,
    allow-discrete lets the exit animation finish before display:none.
 ========================== */
 
-.product-modal,
 .auth-modal,
 .search-modal {
   opacity: 0;
   transform: translateY(14px) scale(0.96);
 
-  /* Fallback for older browsers (drops the discrete lines they can't parse) */
   transition:
     opacity var(--dur-move) var(--ease-out),
     transform var(--dur-move) var(--ease-spring);
@@ -266,7 +264,6 @@ button,
     display var(--dur-move) allow-discrete;
 }
 
-.product-modal[open],
 .auth-modal[open],
 .search-modal[open] {
   opacity: 1;
@@ -274,7 +271,6 @@ button,
 }
 
 @starting-style {
-  .product-modal[open],
   .auth-modal[open],
   .search-modal[open] {
     opacity: 0;
@@ -282,7 +278,6 @@ button,
   }
 }
 
-.product-modal::backdrop,
 .auth-modal::backdrop,
 .search-modal::backdrop {
   opacity: 0;
@@ -292,40 +287,18 @@ button,
     display var(--dur-move) allow-discrete;
 }
 
-.product-modal[open]::backdrop,
 .auth-modal[open]::backdrop,
 .search-modal[open]::backdrop {
   opacity: 1;
 }
 
 @starting-style {
-  .product-modal[open]::backdrop,
   .auth-modal[open]::backdrop,
   .search-modal[open]::backdrop {
     opacity: 0;
   }
 }
 
-/* ==========================
-   RESPECT REDUCED-MOTION SETTINGS
-========================== */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0.01ms !important;
-    transition-delay: 0s !important;
-    animation-duration: 0.01ms !important;
-  }
-    html {
-    scroll-behavior: auto;
-  }
-    .product-card__image {
-    transition: opacity 0.01ms !important;
-    transform: none;
-  }
-}
 
 
 /* ==========================

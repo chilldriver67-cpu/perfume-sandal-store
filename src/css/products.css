@@ -402,6 +402,7 @@
   height: 100%;
   min-height: 320px;
   object-fit: cover;
+  view-transition-name: product-hero-image;
 }
 
 .product-modal__info {

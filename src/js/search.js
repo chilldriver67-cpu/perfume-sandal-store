@@ -72,6 +72,8 @@ export function initSearch() {
     if (!resultBtn) return;
 
     const productId = Number(resultBtn.dataset.id);
+    const imageEl = resultBtn.querySelector(".search-result__image");
+
     modal.close();
     openProductModal(productId);
   });
