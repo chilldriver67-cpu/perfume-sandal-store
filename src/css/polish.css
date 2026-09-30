@@ -308,3 +308,27 @@ button,
 html {
   scroll-behavior: smooth;
 }
+
+/* ==========================
+   FIX: keep the shared-element transition's corners consistent
+   throughout the whole animation, instead of depending on the card's
+   and modal's individually-baked corner shapes (which differ in size),
+   which is what caused the brief "squares off at the midpoint" glitch.
+========================== */
+
+::view-transition-group(product-hero-image),
+::view-transition-image-pair(product-hero-image),
+::view-transition-old(product-hero-image),
+::view-transition-new(product-hero-image) {
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  overflow: hidden;
+}
+
+@supports (corner-shape: squircle) {
+  ::view-transition-group(product-hero-image),
+  ::view-transition-image-pair(product-hero-image),
+  ::view-transition-old(product-hero-image),
+  ::view-transition-new(product-hero-image) {
+    corner-shape: squircle;
+  }
+}
