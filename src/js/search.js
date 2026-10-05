@@ -68,13 +68,12 @@ export function initSearch() {
   // so we listen on the results container itself rather than individual
   // result buttons.
   document.getElementById("search-results").addEventListener("click", (event) => {
-    const resultBtn = event.target.closest(".search-result");
-    if (!resultBtn) return;
+  const resultBtn = event.target.closest(".search-result");
+  if (!resultBtn) return;
 
-    const productId = Number(resultBtn.dataset.id);
-    const imageEl = resultBtn.querySelector(".search-result__image");
+  const productId = Number(resultBtn.dataset.id);
 
-    modal.close();
-    openProductModal(productId);
+  modal.close();
+  openProductModal(productId, resultBtn);
   });
-}
+}  

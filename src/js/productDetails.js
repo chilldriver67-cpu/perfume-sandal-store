@@ -2,21 +2,21 @@
 // PRODUCT DETAILS MODAL
 // Shows an expanded view of a single product with a quantity selector.
 //
-// SHARED ELEMENT TRANSITION: when a card's image is passed in, the modal
-// visually grows out of that exact image (and shrinks back into it on
-// close) using the native View Transitions API. Without it (e.g. the
-// browser doesn't support it, or no source image is available), it just
-// opens/closes normally — this is a progressive enhancement, not a
-// requirement.
+// SHARED ELEMENT TRANSITION: the WHOLE clicked card (image + info
+// together, as one piece) visually grows into the WHOLE modal, and
+// shrinks back into that same card on close — using the native View
+// Transitions API. Without browser support, or no source card available,
+// it just opens/closes normally (progressive enhancement, not a
+// requirement).
 // ==========================
 
 import { products } from "../data/products.js";
 import { addToCart } from "./cart.js";
 
-const TRANSITION_NAME = "product-hero-image";
+const TRANSITION_NAME = "product-card-to-modal";
 
 let selectedQuantity = 1;
-let sourceImageEl = null; // the card image the currently-open modal "grew from"
+let sourceCardEl = null; // the card the currently-open modal "grew from"
 
 function supportsViewTransitions() {
   return typeof document.startViewTransition === "function";
@@ -27,8 +27,7 @@ function preloadImage(src) {
     const img = new Image();
     img.src = src;
     if (img.decode) {
-      // Never let a failed decode block the modal from opening
-      img.decode().then(resolve).catch(resolve);
+      img.decode().then(resolve).catch(resolve); // never block the modal on a failed decode
     } else {
       img.onload = resolve;
       img.onerror = resolve;
@@ -84,21 +83,21 @@ function populateAndOpen(product, modal) {
   attachModalListeners(product);
 }
 
-export async function openProductModal(productId, clickedImageEl) {
+export async function openProductModal(productId, sourceCardElement) {
   const product = products.find((p) => p.id === productId);
   if (!product) return;
 
   const modal = document.getElementById("product-modal");
 
-  if (supportsViewTransitions() && clickedImageEl) {
+  if (supportsViewTransitions() && sourceCardElement) {
     await preloadImage(product.image);
 
-    clickedImageEl.style.viewTransitionName = TRANSITION_NAME;
-    sourceImageEl = clickedImageEl;
+    sourceCardElement.style.viewTransitionName = TRANSITION_NAME;
+    sourceCardEl = sourceCardElement;
 
     document.startViewTransition(() => {
       populateAndOpen(product, modal);
-      clickedImageEl.style.viewTransitionName = "";
+      sourceCardElement.style.viewTransitionName = "";
     });
   } else {
     populateAndOpen(product, modal);
@@ -108,21 +107,21 @@ export async function openProductModal(productId, clickedImageEl) {
 export function closeProductModal() {
   const modal = document.getElementById("product-modal");
 
-  if (supportsViewTransitions() && sourceImageEl) {
-    const returningTo = sourceImageEl;
+  if (supportsViewTransitions() && sourceCardEl) {
+    const returningTo = sourceCardEl;
 
     const transition = document.startViewTransition(() => {
-      modal.close(); // modal's CSS-named image stops being rendered here...
-      returningTo.style.viewTransitionName = TRANSITION_NAME; // ...so it's safe to name the card image now
+      modal.close();
+      returningTo.style.viewTransitionName = TRANSITION_NAME;
     });
 
     transition.finished.finally(() => {
       returningTo.style.viewTransitionName = "";
-      sourceImageEl = null;
+      sourceCardEl = null;
     });
   } else {
     modal.close();
-    sourceImageEl = null;
+    sourceCardEl = null;
   }
 }
 
@@ -134,9 +133,6 @@ export function initProductDetails() {
 
   closeBtn.addEventListener("click", closeProductModal);
 
-  // Escape closes a <dialog> natively via a "cancel" event, bypassing our
-  // close button entirely. Intercept it so Escape gets the same reverse
-  // transition instead of an instant, jarring close.
   modal.addEventListener("cancel", (event) => {
     event.preventDefault();
     closeProductModal();
@@ -150,8 +146,7 @@ export function initProductDetails() {
 
     const addBtn = card.querySelector(".product-card__btn");
     const productId = Number(addBtn?.dataset.id);
-    const imageEl = card.querySelector(".product-card__image");
 
-    if (productId) openProductModal(productId, imageEl);
+    if (productId) openProductModal(productId, card);
   });
 }

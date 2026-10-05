@@ -316,19 +316,20 @@ html {
    which is what caused the brief "squares off at the midpoint" glitch.
 ========================== */
 
-::view-transition-group(product-hero-image),
-::view-transition-image-pair(product-hero-image),
-::view-transition-old(product-hero-image),
-::view-transition-new(product-hero-image) {
-  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+::view-transition-group(product-card-to-modal),
+::view-transition-image-pair(product-card-to-modal),
+::view-transition-old(product-card-to-modal),
+::view-transition-new(product-card-to-modal) {
+  border-radius: var(--radius-xl);
   overflow: hidden;
 }
 
 @supports (corner-shape: squircle) {
-  ::view-transition-group(product-hero-image),
-  ::view-transition-image-pair(product-hero-image),
-  ::view-transition-old(product-hero-image),
-  ::view-transition-new(product-hero-image) {
+  ::view-transition-group(product-card-to-modal),
+  ::view-transition-image-pair(product-card-to-modal),
+  ::view-transition-old(product-card-to-modal),
+  ::view-transition-new(product-card-to-modal) {
     corner-shape: squircle;
   }
 }
+
