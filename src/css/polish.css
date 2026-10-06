@@ -324,12 +324,4 @@ html {
   overflow: hidden;
 }
 
-@supports (corner-shape: squircle) {
-  ::view-transition-group(product-card-to-modal),
-  ::view-transition-image-pair(product-card-to-modal),
-  ::view-transition-old(product-card-to-modal),
-  ::view-transition-new(product-card-to-modal) {
-    corner-shape: squircle;
-  }
-}
 
